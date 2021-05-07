@@ -12,7 +12,7 @@ function preload()
 {
 	starImg = loadImage("images/star.png");
 	bgImg = loadImage("images/starNight.png");
-	fairyImg = loadAnimation("images/fairyImage1.png, images/fairyImage2.png");
+	//fairyImg = loadAnimation("images/fairyImage1.png, images/fairyImage2.png");
 	sound = loadSound("sound/JoyMusic.mp3");
 }
 
@@ -50,7 +50,7 @@ function draw() {
 
   if(star.y > 470 && starBody.position.y > 470)
   {
-	  Mater.Body.setStatic(starBody, true);
+	  Matter.Body.setStatic(starBody, true);
   }
 
   drawSprites();
@@ -59,18 +59,19 @@ function draw() {
 
 function keyPressed() {
 
-	if (keyCode === DOWN_ARROW) {
+	if (keyCode === DOWN_ARROW) 
+    {
 		Matter.Body.setStatic(starBody,false); 
 	}
 
-	if(keyCode === right_arrow)
+	if(keyCode === RIGHT_ARROW)
 	{
-		fairy.x = fairy.x + 5;
+		fairy.x = fairy.x + 10;
 	}
 	
-    if(keyCode === left_arrow)
+    if(keyCode === LEFT_ARROW)
     {
-	    fairy.x = fairy.x - 5;
+	    fairy.x = fairy.x - 10;
     }
 
 }
